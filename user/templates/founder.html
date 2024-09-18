@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width={device-width}, initial-scale=1.0">
+    <title>Founder's Message - Seth Anandram Jaipuria School &#8211; Sadhu Campus, Barabanki</title>
+<style>
+    
+    .img-hover:hover
+    {
+    transform: scale(1.04);
+    box-shadow: 2px 2px 15px gray;
+    transition: all 0.5s ease;
+    }
+</style>
+</head>
+<body>
+    {%extends 'parent.html'%}
+    {%load static%}
+ 
+    <!-- Slider Start -->
+     {%block text%}
+        FOUNDER'S MESSAGE </p>
+        <h3 class="text-white">Founder's Message</h3>
+        
+     {%endblock%}
+    <!-- Slider End -->
+    {%block body%}
+    <!-- Main Start -->
+        <div class="row bg-light">
+            <div class="col-sm-10 mx-auto mt-4">
+                <div class="row">
+                    <div class="col-sm-3 text-center py-3">
+                        <div class="card img-hover  " style="border: 10px solid white; " >
+                            <img src="{%static 'img/m1.jpg'%}" class="card-img-top rounded-0 " alt="...">
+                           
+                          </div>
+                          <p class=" pt-3 fw-bold text-primary">Shri Sadhu Ram Ji</p>
+                          <p class="fw-bold">Founder</p>
+                    </div>
+                    <div class="col-sm-6 py-3">
+                        <p><b>Dear Parents, Guardians and Students,</b></p>
+                        <p style="text-align: justify; font-size: 15px;" >The journey of Seth Anandram Jaipuria School begins with a profound commitment to bridge the gap in educational access and quality that persists in rural areas. Having grown up in a similar environment, I understand first-hand the challenges faced by students who aspire for a modern and English-based education but lack the means to pursue it.</p>
+                        <p style="text-align: justify; font-size: 15px;">
+                            It is this very understanding that has fuelled our mission to establish a school that not only imparts knowledge but also nurtures dreams. Our curriculum is meticulously designed to blend traditional values with contemporary teaching methodologies, ensuring that every student receives a holistic education that prepares them for success in the 21st century.
+                        </p>
+                    </div>
+                    <div class="col-sm-3 py-3 text-center">
+                        <div class="card img-hover"  style="border:10px solid white; " >
+                            <img src="{%static 'img/m2.jpg'%}" class="card-img-top rounded-0 " alt="...">
+                           
+                          </div>
+                          <p class=" pt-3 fw-bold text-primary">Smt. Sushmawati Ji</p>
+                          <p class="fw-bold">Founder</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-10 mx-auto mb-5">
+                <p class="text-align-justify">At our school, we envision a learning environment where curiosity is encouraged, critical thinking is fostered, and creativity is celebrated. Through interactive classrooms, state-of-the-art facilities, and a dedicated team of educators, we aim to ignite a passion for learning that transcends boundaries and empowers students to realize their full potential.</p>
+                <p class="text-align-justify">As we embark on this journey together, I invite you to join us in shaping a future where every child has access to quality education. Together, let us sow the seeds of knowledge, nurture the aspirations of our youth, and build a brighter tomorrow for generations to come.</p>
+                <p>Thank you for entrusting us with the education of your children. We look forward to partnering with you in this noble endeavour.</p>
+            </div>
+
+        </div>
+
+    <!-- Main End -->
+
+
+    {%endblock%}
+</body>
+</html>

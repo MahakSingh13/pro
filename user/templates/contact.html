@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Japuria school</title>
+    <style>
+         i{
+            color: brown;
+         }
+    </style>
+   
+  </head>
+  <body>
+    {%extends 'parent.html'%}
+    {%load static%}
+    {% block slider%}
+  
+
+<div class="row">
+<img src="https://imgsrv2.voi.id/HpO09gZIQxpPSpVKdPkkZwaQELHpXUDAgoUw26q-tiA/auto/1200/675/sm/1/bG9jYWw6Ly8vcHVibGlzaGVycy8xNTE4MjMvMjAyMjAzMzEwODA3LW1haW4uSlBH.jpg" alt=""style="height:75vh">
+</div>
+<div class="row">
+    
+    <div class="col-2"></div>
+    <div class="col-4">
+        <br><br>
+        <H1>Contact Us</H1>
+        <form method="post">
+          {% csrf_token %}
+        <br>
+        <input type="text" name="name" placeholder="  STUDENT NAME * " style="width: 28vw;height: 5vh;">
+        <br><br>
+        <input type="text"name="pname" placeholder="  PARENT NAME *" style="width: 28vw;height: 5vh;">
+        <br><br>
+        <input type="text"name="email" placeholder="  EMAIL *" style="width: 28vw;height: 5vh;">
+        <br><br>
+        <input type="text"name="mobile" placeholder="  PHONE NUMBER *" style="width: 28vw;height: 5vh;">
+        <br><br>
+        <input type="text"name="area" placeholder="  AREA" style="width: 28vw;height: 5vh;">
+        <br><br>
+        <button class="btn btn-primary"type="submit">Send</button>
+        <br><br>
+        </form>
+    </div>
+    <div class="col-4">
+        <br><br>
+        <h3>Contact Info</h3>
+        <br>
+        <i class="fa-solid fa-location-dot"></i>
+        
+Address: Seth Anandram Jaipuria School, Sadhu Campus, Barabanki
+Village -Jhansapurwa, Post-Madanpur, Tehsil-Fatehpur, Barabanki. Pincode-225305
+       <br><br>
+
+       <i class="fa-solid fa-phone"></i>
+Phone: 9044554046, 9044554045
+<br><br>
+<i class="fa-solid fa-envelope"></i>
+
+admission.sadhucampus@jaipuria.school
+        
+       <br><br>
+       <h3>School Operational Timing  </h3>
+       <br>
+       <i class="fa-regular fa-clock"></i>
+       
+Summer : 08:00 am – 02:00 pm
+<br><br>
+<i class="fa-regular fa-clock"></i>
+Winters : 09:00 am – 03:00 pm
+
+
+    </div>
+    <div class="col-2"></div>
+</div>
+ <br><br>
+
+{% endblock %}
+   
+  </body>
+</html>

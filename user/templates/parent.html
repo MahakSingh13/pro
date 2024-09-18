@@ -1,0 +1,230 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<style>
+    .dropdown:hover ul{
+        display: block;
+    }
+    .img-hover:hover{
+      transform: scale(1.04);
+      box-shadow: 2px 2px 15px grey;
+      transition: all 0.5s ease;
+    }
+  
+</style>
+</head>
+<body>
+   <!-- outer start -->
+    <div class="container-fluid">
+        <!-- header start -->
+         <div class="row my-2">
+            <div class="col-sm-4 text-center">
+                <img src="{%static 'img/Sadhu-Campus-1.jpeg'%}" class="w-75" alt="" srcset="">
+            </div>
+            <div class="col-sm-8">
+                <div class="row">
+                    <div class="col-sm-10 text-end d-flex justify-content-end">
+                        <p class="my-auto d-sm-block d-none">
+                        <a href="#"class="text-decoration-none"><i class="fa-solid fa-phone"></i> <span> <b> 9044556677 </b>,</span></a>  <span><a href="#"class="text-decoration-none"> <b> 9044556677</b></a></span> |
+                        <a href="#"class="text-decoration-none"> <i class="fa-solid fa-envelope"></i>  <span> <b> admission.sadhucampus@jaipuria.school</b></a></span>
+                        <p>&nbsp;&nbsp;</p>
+                        <p><div class="dropdown d-inline">
+                            <button class="btn " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a href="#"class="text-decoration-none"><i class="fa-solid fa-magnifying-glass"></i></a>
+                                
+                            </button>
+                           
+                            <form class="dropdown-menu">
+                                <input type="text" class="form-control" placeholder="Search"/>
+                               
+                            </form>
+                          </div></p>
+                    </p>
+                    </div>
+                    
+                </div>
+            
+            <div class="row d-flex justify-content-space between">
+                <div class="col-sm-10 ">
+                    <nav class="navbar navbar-expand-lg bg-light">
+                        <div class="container-fluid">
+                          <a class="navbar-brand" href="#"></a>
+                          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                          </button>
+                          <div class="collapse navbar-collapse ms-4" id="navbarNavAltMarkup">
+                            <div class="navbar-nav">
+                              <a class="nav-link btn btn-outline-primary border-0" aria-current="page" href="{%url 'index'%}">Home</a>   
+                              <li class="nav-item dropdown">
+                                <a class="nav-link  btn btn-outline-primary border-0 " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  About us
+                                </a>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item  btn btn-outline-primary border-0" href="{%url 'vision'%}">Vision and Mission</a></li>
+                                  <li><a class="dropdown-item " href="{%url 'about-school'%}">About School</a></li>
+                                  <li><hr class="dropdown-divider"></li>
+                                  <li><a class="dropdown-item  btn btn-outline-primary border-0" href="{% url 'founder'%}">Founder's Message</a></li>
+                                  <li><a class="dropdown-item  btn btn-outline-primary border-0" href="{%url 'chairman'%}">Chairman's Message</a></li>
+                                  <li><a class="dropdown-item  btn btn-outline-primary border-0" href="{%url 'principal'%}">Principal's Message</a></li>
+                                  <li><a class="dropdown-item" href="{%url 'smt'%}">School Management Team</a></li>
+                                </ul>
+                              </li>
+                              <a class="nav-link btn btn-outline-primary border-0 " href="{%url 'academics'%}">Academics</a>
+                              <li class="nav-item dropdown">
+                                <a class="nav-link  btn btn-outline-primary border-0 " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  Facalities
+                                </a>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item  btn btn-outline-primary border-0" href="{%url 'transport'%}">Transport</a></li>
+                                  <li><a class="dropdown-item " href="{%url 'medical'%}">Medical Room</a></li>
+                                  
+                                  <li><a class="dropdown-item" href="{%url 'smart_class'%}">Smart Class</a></li>
+                                </ul>
+                              </li>
+                              <li class="nav-item dropdown">
+                                <a class="nav-link  btn btn-outline-primary border-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                 Admission
+                                </a>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item  btn btn-outline-primary border-0" href="{%url 'admission'%}">Admission Procedure</a></li>
+                                  <li><a class="dropdown-item " href="{%url 'prospectus'%}">Download Prospectus </a></li>
+                                  <li><a class="dropdown-item " href="{%url 'rules'%}">Rules & Regulations</a></li>
+                                
+                                  <li><a class="dropdown-item" href="{%url 'fees'%}">Fee Structure</a></li>
+                                </ul>
+                              </li>
+                              <li class="nav-item dropdown">
+                                <a class="nav-link  btn btn-outline-primary border-0 " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  Media
+                                </a>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item  btn btn-outline-primary border-0" href="{%url 'events'%}">News Events</a></li>
+                                  <li><a class="dropdown-item " href="{%url 'media'%}">Video Gallery</a></li>
+                                </ul>
+                              </li>
+                              <a class="nav-link btn btn-outline-primary border-0 " href="{%url 'career'%}">Career</a>
+                              <a class="nav-link btn btn-outline-primary border-0 " href="{%url 'contact'%}">Contact us</a>
+                            </div>
+                          </div>
+                        </div>
+                      </nav>
+                </div>
+                <div class="col-sm-2">
+                  <a href="{%url 'login'%}" class="btn btn-outline-primary">SMS</a>
+                </div>
+            </div>
+         </div>
+         </div>
+         <!-- header end -->
+          <!-- slider start -->
+           {%block slider%}
+           <div class="row" style="background-image:url('{%static 'img/naini_breadcrumb.jpg'%}'); background-size:cover;">
+            <div class="col-sm-10 mx-auto p-5">
+              <p class="text-white"><a href="{%url 'index'%}"class="text-decoration-none">Home</a>
+                {%block text%}
+                | Vision & Mission</p>
+              <h2 class="text-white">Vision & Mission</h2>
+              {%endblock%}
+              <hr style="background-color: blue; width: 16vw; height: 1vh; opacity: 1;">
+             
+            </div>
+           </div>
+           {%endblock%}
+           <!-- slider end -->
+            <div class="row">
+              <div class="col-sm-10">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <img src="" alt="" srcset="">
+                  </div>
+                  <div class="col-sm-6"></div>
+                </div>
+              </div>
+            </div>
+
+
+          <!-- main start -->
+           {%block body%}
+           {%endblock%}
+           <!-- main end -->
+
+
+         <!-- footer start -->
+          
+          
+         <div class="row bg-dark text-light"style="border-top:3px solid red">
+           <div class="col-lg-2"></div>
+           <div class="col-lg-8 p-5">
+             <div class="row p-5">
+               <div class="col-lg-4">
+                  <h4><b>ABOUT US</b></h4></br>
+             <p>Seth Anandram Jaipuria School, Sadhu Campus – Barabanki, follows the motto ‘Empower, Enthuse and Excel’ by sparking the students’ curiosity and enthusing and empowering them with knowledge to excel in all aspects of school education. We create life-long learners.</p>
+               </div>
+               <div class="col-lg-4">
+                 <h4><b>QUICK LINKS</b></h4></br>
+                 <ul>
+                   <li>Feedback Form</li><hr>
+                   <li>Career</li><hr>
+                   <li>Fee Structure</li><hr>
+                   <li>Parent Portal</li><hr>
+                 </ul>
+               </div>
+               <div class="col-lg-4">
+                 <h4><b>CONTACT US</b></h4></br>
+                 <p><i class="fa-regular fa-circle-dot"></i> <b>Seth Anandram Jaipuria School, Sadhu Campus, Barabanki</b>: Village -Jhansapurwa,
+                   Post-Madanpur,Tehsil-Fatehpur,
+                   Barabanki Pincode-225305</p></br>
+                   <p><i class="fa-brands fa-whatsapp"></i> Phone: 9044554046, 9044554045</p></br>
+                   <p><i class="fa-regular fa-clock"></i> Working Days/Hours: Summer- 08:00 am – 02:00 pm
+                     Winters- 09:00 am – 03:00 pm</p>
+                     <i class="fa-brands fa-square-facebook border border-dark  p-2 ms-2 square" style=" color: black; background-color:white;"></i> 
+                     <i class="fa-brands fa-youtube border-dark p-2 square ms-2" style = "color:black; background-color:white;"></i>
+                      <i class="fa-brands fa-instagram border-dark p-2 square ms-2" style = "color:black; background-color:white;"></i>
+                   
+               </div>
+             </div>
+             
+           </div>
+            <div class="row pb-2"style="border-bottom:5px solid red">
+           </div>
+           
+           <div class="col-lg-2"></div>
+         </div>
+        
+          <div class="row text-light bg-dark p-4">
+           <div class="col-lg-2"></div>
+           <div class="col-lg-10">
+             &copy  Copyright 2024. All Rights Reserved.
+          
+          </div>
+          </div>
+       <!-- footer end -->
+        </div>
+         
+    
+    <!-- outer end -->
+     <div class="fb text-center pt-2"><i class="fa-brands fa-facebook text-primary p-2 rounded-circle d-inline-block bg-light"></i></div>
+     <div class="insta  text-center pt-2"><i class="fa-brands fa-instagram text-primary p-2 rounded-circle d-inline-block bg-light"></i></div>
+     <div class="you  text-center pt-2"><i class="fa-brands fa-youtube text-light fs-3 p-1 rounded-circle d-inline-block "></i></div>
+
+     {% if msg %}
+     <script>window.alert('{{msg}}')</script>
+     {% endif %}
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+</html>
+

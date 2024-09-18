@@ -1,0 +1,77 @@
+{% extends "teacherparent.html" %}
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align:center;">Attendance</h1>
+            <table class="table">
+                <tr>
+                    <th>Student Name</th>
+                    <th>StudentId</th>
+                    <th>Student Class</th>
+                   <th>Status</th>
+                    <th>Action</th>
+                </tr>
+                {% for s in students %}
+                    <form method="post">
+                        {% csrf_token %}
+                        <tr>
+                            <td>
+                                <input type="text" name="studentname"value="{{s.name}}" class="form-control text-dark" readonly>
+                            </td>
+                            <td>
+                                <input type="text" name="studentid" value="{{s.id}}" class="form-control text-dark" readonly>
+                            </td>                            
+                            <td>
+                                <input type="text" name="sclass" value="{{teacher.tclass}}" class="form-control text-dark" readonly>
+                            </td>
+                           
+                            <td>
+                                <select name="status" class="form-select">
+                                    <option value="P">P</option>
+                                    <option value="A">A</option>
+                                    </select>
+                                    </td>
+                                    <th>
+                                        <button class="btn btn-success" type="submit">Done</button>
+                                    </th>
+                            </td>
+                        </tr>
+                    </form>
+                {% endfor %}
+            </table>
+               
+              
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-sm-12">
+            <table class="table text-light mx-auto w-75 table-bordered" >
+                <tr>
+                    <th colspan="4" class="text-center">Student Attendance</th>
+                </tr>
+                <tr>
+                    <th>S.no</th>
+                    <th>Date</th>
+                    <th>Student ID</th>
+                    <th>Student Name</th>
+                    <th>Attendance</th>
+                
+                </tr>
+                {% for a in att %}
+                    <form method="post">
+                        {% csrf_token %}
+                        <tr>
+                            <td>{{forloop.counter}}</td>
+                            <td>{{a.date}}</td>
+                            <td>{{a.studentid}}</td>
+                            <td>{{a.studentname}}</td>
+                            <td>{{a.status}}</td>
+                                   
+                           
+                        </tr>
+                    </form>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+{% endblock body %}

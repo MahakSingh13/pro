@@ -1,0 +1,17 @@
+.fb,.insta,.you{
+    height:50px;
+    width:50px;
+   
+    position:fixed;
+    top:140px;
+    background-color:blue;
+}
+.insta{
+    top:190px;
+    background-color:purple;
+
+}
+.you{
+    top:240px;
+    background-color:red;
+}

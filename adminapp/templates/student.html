@@ -1,0 +1,97 @@
+{% extends "adminparent.html" %}
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align:center">Student</h1>   
+            <div class="row">
+                <div class="col-sm-12">
+                    <form method="post" class="p-3 text-light">
+                        {%csrf_token%}
+                        <h3>Add Student</h3>
+                        {% if msg %}
+                        <div class="alert alert-dark" role="alert">{{msg}}</div>
+                        {% endif %}
+                        <div class="row">
+                            <div class="col-sm-6"><input type="text" name="name" class="form-control my-2" placeholder="Enter Name" required="True"></div>
+                            <div class="col-sm-6"><input type="text" name="fname" class="form-control my-2" placeholder="Enter Father's Name" required="True"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4"><input type="text" name="email" class="form-control my-2" placeholder="Enter Email"required="True"></div>
+                            <div class="col-sm-4"><input type="number" name="number" class="form-control my-2" placeholder="Enter Mobile no."required="True"></div>
+                            <div class="col-sm-4"><input type="text" name="password" class="form-control my-2" placeholder="Enter Password"required="True"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6"><input type="number" name="fnumber" class="form-control my-2" placeholder="Enter Father's Number"required="True"></div>
+                            <div class="col-sm-6"><input type="date" name="dob" class="form-control my-2" placeholder="Enter DOB"required="True"></div>
+                        </div>
+                        <div class="row"><div class="col-sm-6">
+                            <select name="sclass" class="form-select">
+                                <option value="" selected>---Select Class---</option>
+                                {% for c in cl%}
+                                <option value="{{c.name}}">{{c.name}}</option>
+                                {% endfor %}
+                                </select>
+                                </div>
+                            
+                            <div class="col-sm-6"><input type="text" name="sfee" class="form-control my-2" placeholder="Enter Fee"required="True"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6"><input type="text" name="balance" class="form-control my-2" placeholder="Enter Balance"required="True"></div>
+                            <div class="col-sm-6">
+                                <textarea name="address" class="form-control text-light" placeholder="Enter Address"required="True"></textarea>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-12 text-center">
+                                <button type="submit" class="btn btn-success d-inline-block my-auto my-2 px-4">Add</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div> 
+            <div class="row my-3">
+                <h2 class="text-center">Registered Student</h2>
+                <div class="table-responsive">
+                    <table class="table text-light">
+                        <tr>
+                            <td>S.no</td>
+                            <td>Name</td>
+                            <td>Fname</td>
+                            <td>Email</td>
+                            <td>Number</td>
+                            <td>Fnumber</td>
+                            <td>DOB</td>
+                            <td>Class</td>
+                            <td>Fee</td>
+                            <td>Rest Fee</td>
+                            <td>Address</td>
+                            <td colspan="2">Action</td>
+                        </tr>
+                        {% for s in stu %}
+                        <tr>
+                            <td>{{s.id}}</td>
+                            <td>{{s.name}}</td>
+                            <td>{{s.fname}}</td>
+                            <td>{{s.email}}</td>
+                            <td>{{s.mobile}}</td>
+                            <td>{{s.fnumber}}</td>
+                            <td>{{s.dob}}</td>
+                            <td>{{s.sclass}}</td>
+                            <td>{{s.sfee}}</td>
+                            <td>{{s.balance}}</td>
+                            <td>{{s.address}}</td>
+                            <td>
+                                <a href="{%url 'adminapp:edit' id=s.id%}" class="btn btn-primary">Edit</a>
+                            </td>
+                            <td>
+                                <a href="{% url 'adminapp:delstudent' id=s.id%}" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+{% endblock body %}

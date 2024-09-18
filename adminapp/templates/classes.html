@@ -1,0 +1,62 @@
+{% extends "adminparent.html" %}
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align:center;">Classes</h1>   
+              <form action="" method="post" class="row">
+                {% csrf_token %}
+                <table class="table text-light w-75">
+                    <tr>
+                        <td>Enter Class Name</td>
+                        <td><input type="text"name="name" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td>Enter Room No.</td>
+                        <td><input type="text"name="roomno" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td>Enter No. of Seats</td>
+                        <td><input type="text"name="seats" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="text-center">
+                            <button type="submit" class="btn btn-success">Add</button>
+                        </td>
+                    </tr>
+
+                </table>
+              </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+           
+              <form action="" method="post" class="row">
+                <table class="table text-light w-75">
+                    <tr>
+                        <th>Class ID</th>
+                        <th>Class Name</th>
+                        <th>Room No.</th>
+                        <th>Seats</th>
+                        <th>Actions</th>
+                        
+                    </tr>
+                    {% for cl in c %}
+                    <tr>
+                        <td>{{cl.id}}</td>
+                        <td>{{cl.name}}</td>
+                        <td>{{cl.roomno}}</td>
+                        <td>{{cl.seats}}</td>
+                        <td>
+                            <a href="" class="btn btn-primary">Edit</a>
+                        </td>
+                    </tr>
+                    {% endfor%}
+
+                </table>
+              </form>
+        </div>
+    </div>
+    
+
+{% endblock body %}

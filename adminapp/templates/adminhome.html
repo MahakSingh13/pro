@@ -1,0 +1,44 @@
+{% extends "adminparent.html" %}
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align:center;">Dashboard</h1>   
+        </div>
+        <div class="row p-5">
+        <div class="col-sm-4">
+            <div class="card shadow p-3">
+                <div class="text-center"><i class="fa-solid fa-user-graduate fs-3 text-success"></i>
+                <span class="ms-3 fs-3"><b>Students Enrolled</b></span></div>
+                <h1 class="text-center pt-3 text-success">{{stu_count}}</h1>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card shadow p-3">
+                <div class="text-center"><i class="fa-solid fa-chalkboard-user fs-3 text-primary"></i></i>
+                    <span class="ms-3 fs-3"><b>Teachers </b></span></div>
+                    <h1 class="text-center pt-3 text-primary">{{t_count}}</h1>
+                </div>
+            </div>
+       
+        <div class="col-sm-4">
+            <div class="card shadow p-3">
+                <div class="text-center"><i class="fa-solid fa-users-viewfinder fs-3 text-warning"></i></i></i>
+                    <span class="ms-3 fs-3"><b>Classes </b></span></div>
+                    <h1 class="text-center pt-3 text-warning">{{cl_count}}</h1>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="row p-3">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <div class="card shadow p-3">
+                    <div class="text-center"><i class="fa-solid fa-users-viewfinder fs-3 text-secondary"></i></i></i>
+                        <span class="ms-3 fs-3"><b>Subject </b></span></div>
+                        <h1 class="text-center pt-3 text-secondary">{{sub_count}}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock body %}

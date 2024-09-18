@@ -1,0 +1,60 @@
+{% extends "teacherparent.html" %}
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align:center;"><u>{{teacher.name}} Profile</u></h1>   
+            <form method="post" class="row" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="col-sm-12 p-3">
+                    <div class="mx-auto" style="max-width: 200px;">
+                {% if teacher.pic %}
+                <img src="{{teacher.pic.url}}" alt="" class="w-100" height="200">
+                {% endif %}
+                
+                <input type="file" name="pic" class="form-control">
+            </div>
+            </div>
+            <div class="col-sm-6 p-3">
+                <label>NAME:</label>
+                <input type="text" name="name" value="{{teacher.name}}"readonly class="form-control text-dark">
+            </div>
+            <div class="col-sm-6 p-3">
+                <label>Email::</label>
+                <input type="text" name="name" value="{{teacher.email}}"readonly class="form-control text-dark">
+            </div>
+            
+            <div class="col-sm-6 p-3">
+                <label>Experience:</label>
+                <input type="text" name="name" value="{{teacher.experience}}"readonly class="form-control text-dark">
+            </div>
+            <div class="col-sm-6 p-3">
+                <label>Qualifications:</label>
+                <input type="text" name="name" value="{{teacher.qualification}}"readonly class="form-control text-dark">
+            </div>
+            <div class="col-sm-6 p-3">
+                <label>NUMBER:</label>
+                <input type="text" name="name" value="{{teacher.number}}"readonly  class="form-control text-dark">
+            </div>
+            
+            <div class="col-sm-6 p-3">
+                <label>Class:</label>
+                <input type="text" name="name" value="{{teacher.tclass}}"readonly  class="form-control text-dark">
+            </div>
+            <div class="col-sm-6 p-3">
+                <label>Salary:</label>
+                <input type="text" name="name" value="{{teacher.tsalary}}"readonly  class="form-control text-dark">
+            </div>
+            <div class="col-sm-6 p-3">
+                <label>Join Date:</label>
+                <input type="text" name="name" value="{{teacher.created}}"readonly  class="form-control text-dark">
+            </div>
+            
+            <div class="col-sm-12 text-center p-4">
+                <button type="submit" class="btn btn-success">UPDATE</button>
+            </div>
+        
+            </form>
+             
+        </div>
+    </div>
+{% endblock body %}

@@ -1,0 +1,45 @@
+{% extends "adminparent.html" %}
+{% block body %}
+    <form method="post" class="row py-2">
+        {%csrf_token%}
+        <div class="col-sm-12">
+            <h1 style="text-align:center;">Edit Student</h1>
+            <div class="row py-2">
+                <div class="col-sm-6"><input type="text"value="{{stu.name}}" name="name"placeholder="Enter Name" class="form-control"></div>
+                <div class="col-sm-6"><input type="text"value="{{stu.fname}}" name="fname"placeholder="Enter Fname" class="form-control"></div>
+            </div>
+            <div class="row py-2">
+                <div class="col-sm-6"><input type="number"value="{{stu.mobile}}" name="number"placeholder="Enter Number"class="form-control"></div>
+                <div class="col-sm-6"><input type="number"value="{{stu.fnumber}}" name="fnumber"placeholder="Enter Fnumber" class="form-control"></div>
+            </div>
+
+            <div class="row py-2">
+                <div class="col-sm-6"><input type="email"value="{{stu.email}}" name="email"readonly placeholder="Enter Email"class="form-control text-dark"></div>
+                <div class="col-sm-6">
+                    <select name="sclass" class="form-select">
+                        <option value="" selected>---Select Class---</option>
+                        <option value="{{stu.sclass}}" selected>{{stu.sclass}}</option>
+                        {% for c in cl%}
+                        <option value="{{c.name}}">{{c.name}}</option>
+                        {% endfor %}
+                        </select>
+                </div>
+            </div>
+            <div class="row py-2">
+                <div class="col-sm-6"><input type="text" value="{{stu.sfee}}" name="sfee"placeholder="Enter Fees" class="form-control"></div>
+                <div class="col-sm-6"><input type="text"value="{{stu.balance}}" name="balance"placeholder="Enter Balance" class="form-control"></div>
+            </div>  
+            <div class="row py-2">
+                <div class="col-sm-6"><input type="text"value="{{stu.dob}}" name="dob" placeholder="Enter dob" class="form-control"></div>
+                <div class="col-sm-6">
+                        <textarea name="address"class="form-control my-2 text-light"placeholder="Enter Address"required="True">{{stu.address}}</textarea>
+                </div>
+            </div>  
+              <div class="row">
+                <div class="col-sm-12 text-center">
+                    <button type="submit"class="btn btn-success">Update</button>
+                </div>
+              </div>
+        </div>
+    </form>
+{% endblock body %}

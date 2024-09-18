@@ -1,0 +1,42 @@
+{% extends "adminparent.html" %}
+{% block body %}
+    <form method="post" class="row py-2">
+        {%csrf_token%}
+        <div class="col-sm-12">
+            <h1 style="text-align:center;">Edit Teacher</h1>
+            <div class="row py-2">
+                <div class="col-sm-6"><input type="text"value="{{t.name}}" name="name"placeholder="Enter Name" class="form-control"></div>
+                <div class="col-sm-6"><input type="number"value="{{t.number}}" name="number" placeholder="Enter Number" class="form-control"></div>
+                
+            </div>
+            <div class="row py-2">
+                
+                <div class="col-sm-6"><input type="text"value="{{t.email}}" name="email"placeholder="Enter email"readonly class="form-control"></div>
+                <div class="col-sm-6"><input type="text"value="{{t.password}}" name="password"placeholder="Enter Password"readonly class="form-control"></div>
+
+               
+            </div>
+
+            <div class="row py-2">
+                <div class="col-sm-4"><input type="text"value="{{t.experience}}" name="exp"placeholder="Enter Experience"class="form-control"></div>
+                <div class="col-sm-4"><input type="text"value="{{t.qualification}}" name="qualification"placeholder="Enter Qualifications"class="form-control"></div>
+                <div class="col-sm-4"><input type="text"value="{{t.tsalary}}" name="tsalary"placeholder="Enter Salary"class="form-control"></div>
+            </div>
+            <div class="row py-2">
+                <div class="col-sm-6"><input type="text" value="{{t.tclass}}" name="tclass"placeholder="Enter Class" class="form-control"></div>
+                
+
+                
+                <div class="col-sm-6">
+                        <textarea name="address"class="form-control my-2 text-light"placeholder="Enter Address"required="True">{{t.address}}</textarea>
+                </div>
+                </div>
+            </div>  
+              <div class="row">
+                <div class="col-sm-12 text-center">
+                    <button type="submit"class="btn btn-success">Update</button>
+                </div>
+              </div>
+        </div>
+    </form>
+{% endblock body %}

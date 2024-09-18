@@ -1,0 +1,86 @@
+{% extends "adminparent.html" %}
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align:center;">Subjects</h1>   
+              <form action="" method="post" class="row">
+                {%csrf_token%}
+                <table class="table text-light w-75">
+                    <tr>
+                        <td>Enter Subject Name</td>
+                        <td><input type="text" name="name" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td>Select Class</td>
+                        <td>
+                        <select name="classid" class="form-select">
+                            <option selected>---Select Class---</option>
+                        {% for c in cl %}
+                            <option value="{{c.name}}">{{c.name}}</option>
+                        {% endfor %}
+
+                        </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Select Teacher</td>
+                        <td>
+                        <select name="teacherid" class="form-select">
+                            <option selacted>---Select Teacher---</option>
+                            {% for t in teacher %}
+                            <option value="{{t.id}}">{{t.name}}</option>
+                            {% endfor %}
+                            </select>
+                        </td>
+                    
+                    </tr>
+                    <tr></tr>
+                        <td>Enter Book Name</td>>
+                        <td>
+                            <input type="text"name="book" class="form-control">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="text-center">
+                            <button type="submit" class="btn btn-success">Add</button>
+                        </td>
+                    </tr>
+
+                </table>
+              </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+           
+              
+                <table class="table text-light w-75">
+                    <tr>
+                        <th>Subject ID</th>
+                        <th>Subject Name</th>
+                        <th>Class Name</th>
+                        <th>Teacher Name</th>
+                        <th>Book Name</th>
+                        <th>Actions</th>
+                        
+                    </tr>
+                 {% for s in sub %}
+                    <tr>
+                        <td>{{s.id}}</td>
+                        <td>{{s.name}}</td>
+                        <td>{{s.classid}}</td>
+                        <td>{{s.teacherid}}</td>
+                        <td>{{s.book}}</td>
+                        <td>
+                            <a href="" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor%}
+
+                </table>
+            </form>
+            </div>
+            </div>
+
+{% endblock body %}

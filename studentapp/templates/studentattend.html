@@ -1,0 +1,26 @@
+{% extends "studentparent.html" %}
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align:center;">Student Attendance</h1>   
+            <table class="table text-light mx-auto w-75 table-border" >
+                <tr>
+                    <th>S.no</th>
+                    <th>Date</th>
+                    <th>Attendance</th>
+                 </tr>
+                {% for a in att %}
+                    <form method="post">
+                        {% csrf_token %}
+                        <tr>
+                            <td>{{forloop.counter}}</td>
+                            <td>{{a.date}}</td>
+                            <td>{{a.status}}</td>
+                      </tr>
+                    </form>
+                {% endfor %}
+            </table>
+               
+        </div>
+    </div>
+{% endblock body %}
